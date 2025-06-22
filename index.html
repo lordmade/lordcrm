@@ -366,17 +366,17 @@
             userPic.src = userData.photoURL || "https://www.gravatar.com/avatar?d=mp";
             console.log("User authenticated:", user.uid);
             if (!userData.isAdmin) {
-              console.log("Not an admin, redirecting to home.html");
+              console.log("Not an admin, redirecting to admin-login.html");
               window.location.href = "admin-login.html";
             } else {
               await loadTutors();
             }
           } else {
-            console.log("No user data, redirecting to login.html");
+            console.log("No user data, redirecting to admin-login.html");
             window.location.href = "admin-login.html";
           }
         } else {
-          console.log("No user, redirecting to login.html");
+          console.log("No user, redirecting to admin-login.html");
           window.location.href = "admin-login.html";
         }
       } catch (error) {
