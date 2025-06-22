@@ -272,7 +272,7 @@
       try {
         await signOut(auth);
         console.log("User signed out");
-        window.location.href = "login.html";
+        window.location.href = "admin-login.html";
       } catch (error) {
         console.error("Sign out error:", error.code, error.message);
         errorMessage.textContent = "Sign out failed: " + error.message;
@@ -367,17 +367,17 @@
             console.log("User authenticated:", user.uid);
             if (!userData.isAdmin) {
               console.log("Not an admin, redirecting to home.html");
-              window.location.href = "home.html";
+              window.location.href = "admin-login.html";
             } else {
               await loadTutors();
             }
           } else {
             console.log("No user data, redirecting to login.html");
-            window.location.href = "login.html";
+            window.location.href = "admin-login.html";
           }
         } else {
           console.log("No user, redirecting to login.html");
-          window.location.href = "login.html";
+          window.location.href = "admin-login.html";
         }
       } catch (error) {
         console.error("Auth state error:", error.code, error.message);
